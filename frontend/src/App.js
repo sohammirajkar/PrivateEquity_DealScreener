@@ -229,6 +229,7 @@ function App() {
         <div className="actions">
           <CSVUploader onComplete={load} />
           <button className="btn btn-ghost" onClick={seed}>Seed Demo Data</button>
+          <button className="btn btn-primary" data-testid="open-first-lbo" onClick={() => deals.length && setSelected(deals[0])}>Analyze Top Deal</button>
         </div>
       </header>
 
