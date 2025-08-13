@@ -295,7 +295,7 @@ function App() {
                 <td>{numberFmt(d.ev_ebitda)}</td>
                 <td>{percentFmt(d.growth_rate)}</td>
                 <td><span className="badge">{numberFmt(d.score)}</span></td>
-                <td><button className="btn btn-primary" onClick={() => setSelected(d)}>Quick LBO</button></td>
+                <td><button className="btn btn-primary" data-testid="open-lbo" onClick={() => setSelected(d)}>Quick LBO</button></td>
               </tr>
             ))}
           </tbody>
