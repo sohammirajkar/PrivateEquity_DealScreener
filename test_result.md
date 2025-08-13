@@ -101,3 +101,83 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+## user_problem_statement: "Build a complete Data Science in Private Equity project with Deal Screener + LBO model + dashboards for resume-ready showcase"
+
+## backend:
+  - task: "Deals CRUD and Screener API (/api/deals, /api/deals/screener)"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Implemented endpoints for create/list/update/delete deals with scoring and metrics. Needs testing."
+  - task: "Quick LBO API (/api/lbo/quick)"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Implemented 5-year simple LBO with debt amortization using FCF, returns MOIC & IRR. Needs testing."
+  - task: "Chunked CSV upload (/api/upload/*)"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Implemented init, chunk, complete; parses CSV to deals. Needs testing."
+  - task: "Seed data endpoint (/api/seed)"
+    implemented: true
+    working: "NA"
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "low"
+    needs_retesting: true
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Adds three sample deals to accelerate UI demo."
+
+## frontend:
+  - task: "Deal Screener UI + Filters + CSV Upload + Quick LBO modal"
+    implemented: true
+    working: "NA"
+    file: "/app/frontend/src/App.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: false
+        agent: "main"
+        comment: "Basic dashboard, filters, CSV upload chunks, Quick LBO modal implemented."
+
+## metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 0
+  run_ui: false
+
+## test_plan:
+  current_focus:
+    - "Deals CRUD and Screener API (/api/deals, /api/deals/screener)"
+    - "Quick LBO API (/api/lbo/quick)"
+  stuck_tasks:
+    - "None yet"
+  test_all: false
+  test_priority: "high_first"
+
+## agent_communication:
+  - agent: "main"
+    message: "Please test the backend endpoints listed above. Environment: Backend base URL is provided to frontend via REACT_APP_BACKEND_URL, but you can call endpoints directly using the cluster routing by prefixing '/api'. Focus: list_deals, seed, lbo_quick, upload flow. Validate UUID usage (no ObjectIDs in responses)."
