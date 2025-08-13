@@ -66,7 +66,7 @@ const QuickLBOModal = ({ open, onClose, deal }) => {
           ))}
         </div>
         <div className="flex gap-2 mt-2">
-          <button className="btn btn-primary" onClick={run}>Run LBO</button>
+          <button className="btn btn-primary" data-testid="run-lbo" onClick={run}>Run LBO</button>
         </div>
         {res && (
           <div className="results">
