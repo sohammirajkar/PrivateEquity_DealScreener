@@ -15,6 +15,7 @@ body, html, #root, .App, .page { height: 100%; margin: 0; background: var(--bg);
 .topbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; background: linear-gradient(90deg, rgba(17,18,24,1) 0%, rgba(17,18,24,0.6) 100%); border-bottom: 1px solid #1f2330; position: sticky; top: 0; backdrop-filter: blur(8px); z-index: 10; }
 .brand { font-weight: 700; letter-spacing: 0.2px; font-size: 18px; }
 .actions { display: flex; gap: 10px; align-items: center; }
+.actions .btn-primary { background: linear-gradient(135deg, #5b8cff, #22d3ee); }
 
 .dashboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 14px 20px; }
 .stat { background: var(--panel); border: 1px solid #1f2330; border-radius: 10px; padding: 14px; }
